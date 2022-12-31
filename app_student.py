@@ -14,50 +14,48 @@ def showBoard(board):
     header = '  |  1  |  2  |  3  |'
     printUnderline(header)
 
-    printUnderline(f'a |  {board[0][0]}  |  {board[0][0]}  |  {board[0][0]}  |')
-    printUnderline(f'b |  {board[0][0]}  |  {board[0][0]}  |  {board[0][0]}  |')
-    printUnderline(f'c |  {board[0][0]}  |  {board[0][0]}  |  {board[0][0]}  |')
+    printUnderline(f'a |  {board[0][0]}  |  {board[0][1]}  |  {board[0][2]}  |')
+    printUnderline(f'b |  {board[1][0]}  |  {board[1][1]}  |  {board[1][2]}  |')
+    printUnderline(f'c |  {board[2][0]}  |  {board[2][1]}  |  {board[2][2]}  |')
 
 def checkWinner(board):
-    # Insert the right numbers to check if the board is correct and return the mark if it is!
 
-    print(board)
     ######################################################
     # Check row
     # Row 1
-    if board[0][0] == board[0][0] == board[0][0] != " ":
+    if board[0][0] == board[0][1] == board[0][2] != " ":
         return board[0][0]
 
     # Row 2
-    if board[0][0] == board[0][0] == board[0][0] != " ":
-        return board[0][0]
+    if board[1][0] == board[1][1] == board[1][2] != " ":
+        return board[1][0]
 
     # Row 3
-    if board[0][0] == board[0][0] == board[0][0] != " ":
-        return board[0][0]
+    if board[2][0] == board[2][1] == board[2][2] != " ":
+        return board[2][0]
 
     #######################################################
     # Check column
     # Column 1
-    if board[0][0] == board[0][0] == board[0][0] != " ":
+    if board[0][0] == board[1][0] == board[2][0] != " ":
         return board[0][0]
 
     # Column 2
-    if board[0][0] == board[0][0] == board[0][0] != " ":
-        return board[0][0]
+    if board[0][1] == board[1][1] == board[2][1] != " ":
+        return board[0][1]
 
     # Column 3
-    if board[0][0] == board[0][0] == board[0][0] != " ":
-        return board[0][0]
+    if board[0][2] == board[1][2] == board[2][2] != " ":
+        return board[0][2]
 
     #######################################################
     # Check cross
     # Top left > Bottom right
-    if board[0][0] == board[0][0] == board[0][0] != " ":
-        return board[0][0]
+    if board[0][2] == board[1][1] == board[2][0] != " ":
+        return board[0][2]
 
     # Top right > Bottom left
-    if board[0][0] == board[0][0] == board[0][0] != " ":
+    if board[0][0] == board[1][1] == board[2][2] != " ":
         return board[0][0]
 
     return None
@@ -79,8 +77,8 @@ def isFull(board):
 showBoard(board)
 
 #Game loop
-# While there is None and the board is not full
-while ??? and not isFull(board):
+# While winner is None and the board is not full
+while winner is None and not isFull(board):
 
     # Player 1 starts with X
     if turn == player1:
